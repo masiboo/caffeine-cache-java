@@ -1,0 +1,2 @@
+--add-exports
+java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED
