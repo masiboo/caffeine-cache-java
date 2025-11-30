@@ -1,0 +1,5 @@
+insert into contacting.business_functions_on_teams(account_friendly_name,business_function,organisation_id,role,restriction) values('NL-dev', 'get_recordings', -1 , 'AGENT' ,'SELF');
+insert into contacting.business_functions_on_teams(account_friendly_name,business_function,organisation_id,role,restriction) values('NL-dev', 'get_recordings', -1 , 'ADMIN' ,'TEAM');
+insert into contacting.business_functions_on_teams(account_friendly_name,business_function,organisation_id,role,restriction) values('NL-dev', 'get_recordings', -1 , 'SUPERVISOR' ,'CIRCLE');
+insert into contacting.business_functions_on_teams(account_friendly_name,business_function,organisation_id,role,restriction) values('NL-dev', 'get_recordings', -1 , 'ACCOUNT_ADMIN' ,'ACCOUNT');
+insert into contacting.business_functions_on_teams(account_friendly_name,business_function,organisation_id,role,restriction) values('NL-dev', 'get_recordings', -1 , 'MONITORING' ,'SUPER_CIRCLE');

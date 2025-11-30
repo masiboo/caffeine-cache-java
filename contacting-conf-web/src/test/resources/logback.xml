@@ -1,0 +1,30 @@
+<configuration scan="true" scanPeriod="60 seconds">
+
+
+    <appender name="APPLOG" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="com.ing.apisdk.toolkit.logging.logback.SingleLinePatternLayoutEncoder">
+            <pattern>%d{ISO8601} [%thread] %level %logger{36} %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- be careful with these loggers, setting the log level to debug/info on production can lead to performance issues! -->
+    <logger name="nl.ing" level="debug" additivity="false">
+        <appender-ref ref="APPLOG" />
+    </logger>
+
+    <logger name="org.apache.cassandra" level="warn" additivity="false">
+        <appender-ref ref="APPLOG" />
+    </logger>
+
+    <logger name="org.dbunit" level="warn" additivity="false">
+        <appender-ref ref="APPLOG" />
+    </logger>
+
+    <logger name="slick.jdbc.JdbcBackend.statement" level="debug" additivity="false">
+        <appender-ref ref="APPLOG" />
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="APPLOG" />
+    </root>
+</configuration>

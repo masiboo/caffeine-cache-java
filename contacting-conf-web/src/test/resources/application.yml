@@ -1,0 +1,6 @@
+http-client:
+  routing-client:
+    defaults:
+      # Jenkins patience
+      global-request-timeout: 10s
+      individual-request-timeout: 1s

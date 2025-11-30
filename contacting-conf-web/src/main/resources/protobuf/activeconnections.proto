@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package nl.ing.api.contacting.conf;
+
+message ActiveConnections {
+    repeated ConnectionDetails connectionDetails = 1;
+    repeated WebhookDetails webhookDetails = 2;
+}
+
+message ConnectionDetails {
+    enum ConnectionType {
+        Primary = 0;
+        Fallback = 1;
+        WorkFromHome = 2;
+    }
+    enum Layer {
+        Frontend = 0;
+        Backend = 1;
+    }
+    int64 accountId = 1;
+    Layer layer = 2;
+    string domain = 3;
+    ConnectionType connectionType = 4;
+    string edgeLocation = 5;
+    string url = 6;
+    string region = 7;
+}
+
+message WebhookDetails {
+    enum ConnectionType {
+         Primary = 0;
+         Fallback = 1;
+    }
+    int64 accountId = 1;
+    ConnectionType connectionType = 2;
+    string url = 3;
+}

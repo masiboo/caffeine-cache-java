@@ -1,0 +1,10 @@
+package nl.ing.api.contacting.conf.domain
+
+object SurveyConstants {
+
+  val CHANNEL_CALL = "CALL"
+  val CHANNEL_DIRECTION_INBOUND="INBOUND"
+  val CHANNEL_DIRECTION_OUTBOUND="OUTBOUND"
+  val CHANNEL_DIRECTION_INBOUND_OUTBOUND="INBOUND-OUTBOUND"
+
+}

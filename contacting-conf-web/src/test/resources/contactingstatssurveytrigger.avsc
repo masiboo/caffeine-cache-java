@@ -1,0 +1,103 @@
+{
+  "type": "record",
+  "name": "ContactingSurveyTriggerEvent",
+  "namespace": "nl.ing.api.contacting.statistics",
+  "doc": "Survey event",
+  "fields": [
+    {
+      "name": "eventId",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "The unique event id"
+    },
+    {
+      "name": "accountSid",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "The account SID"
+    },
+    {
+      "name": "cjid",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "The customer journey id of the task"
+    },
+    {
+      "name": "callDirection",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "Was the original customer call inbound or outbound"
+    },
+    {
+      "name": "taskQueueSid",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "The task event type (example: acw.outbound.end)"
+    },
+    {
+      "name": "workerSid",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "The Twilio worker sid"
+    },
+    {
+      "name": "customerPhoneNumber",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "The phone number of the customer"
+    },
+    {
+      "name": "transferIndicator",
+      "type": "boolean",
+      "doc": "A boolean true/false indicating presence of a transfer in the call"
+    },
+    {
+      "name": "callDuration",
+      "type": "int",
+      "doc": "Duration of the call in seconds"
+    },
+    {
+      "name": "taskSid",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "The Twilio task sid"
+    },
+    {
+      "name": "callSid",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "The Twilio call sid"
+    },
+    {
+      "name": "taskReason",
+      "type": {
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      "doc": "The Twilio task complete reasons"
+    },
+    {
+      "name": "timestamp",
+      "type": "long",
+      "doc": "Time when event was sent in miliseconds"
+    }
+  ]
+}

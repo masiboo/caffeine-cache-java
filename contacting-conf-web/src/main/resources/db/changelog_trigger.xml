@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet id="connection_trigger" author="dinchand" dbms="oracle">
+        <sql endDelimiter="/">
+            CREATE OR REPLACE TRIGGER CONNECTIONS_TRIGGER
+            BEFORE INSERT ON CONNECTIONS
+            FOR EACH ROW
+            DECLARE
+            BEGIN SELECT CONNECTIONS_SEQUENCE.NEXTVAL INTO :new.ID
+            FROM dual;
+            END;
+            /
+        </sql>
+    </changeSet>
+    <changeSet id="connection_details_trigger" author="dinchand" dbms="oracle">
+        <sql endDelimiter="/">
+            CREATE OR REPLACE TRIGGER CONNECTIONS_DETAILS_TRIGGER
+            BEFORE INSERT ON CONNECTIONS_DETAILS
+            FOR EACH ROW
+            DECLARE
+            BEGIN SELECT CONNECTIONS_DETAILS_SEQUENCE.NEXTVAL INTO :new.ID
+            FROM dual;
+            END;
+            /
+        </sql>
+    </changeSet>
+    <changeSet id="webhook_connections_trigger" author="ayushm" dbms="oracle">
+        <sql endDelimiter="/">
+            CREATE OR REPLACE TRIGGER WEBHOOK_CONNECTIONS_TRIGGER
+            BEFORE INSERT ON WEBHOOK_CONNECTIONS
+            FOR EACH ROW
+            DECLARE
+            BEGIN SELECT WEBHOOK_CONNECTIONS_SEQUENCE.NEXTVAL INTO :new.ID
+            FROM dual;
+            END;
+            /
+        </sql>
+    </changeSet>
+    <changeSet id="survey_setting_trigger" author="ayushm" dbms="oracle">
+        <sql endDelimiter="/">
+            CREATE OR REPLACE TRIGGER SURVEY_SETTINGS_TRIGGER
+            BEFORE INSERT ON SURVEY_SETTINGS
+            FOR EACH ROW
+            DECLARE
+            BEGIN SELECT SURVEY_SETTINGS_SEQUENCE.NEXTVAL INTO :new.ID
+            FROM dual;
+            END;
+            /
+        </sql>
+    </changeSet>
+    <changeSet id="survey_ph_format_trigger" author="ayushm" dbms="oracle">
+        <sql endDelimiter="/">
+            CREATE OR REPLACE TRIGGER SURVEY_PH_NUM_FORMAT_TRIGGER
+            BEFORE INSERT ON SURVEY_PH_NUM_FORMAT
+            FOR EACH ROW
+            DECLARE
+            BEGIN SELECT SURVEY_PH_NUM_FORMAT_SEQUENCE.NEXTVAL INTO :new.ID
+            FROM dual;
+            END;
+            /
+        </sql>
+    </changeSet>
+    <changeSet id="survey_tq_trigger" author="ayushm" dbms="oracle">
+        <sql endDelimiter="/">
+            CREATE OR REPLACE TRIGGER SURVEY_TASKQ_MAPPING_TRIGGER
+            BEFORE INSERT ON SURVEY_TASKQ_MAPPING
+            FOR EACH ROW
+            DECLARE
+            BEGIN SELECT SURVEY_TASKQ_MAPPING_SEQUENCE.NEXTVAL INTO :new.ID
+            FROM dual;
+            END;
+            /
+        </sql>
+    </changeSet>
+    <changeSet id="survey_org_trigger" author="ayushm" dbms="oracle">
+        <sql endDelimiter="/">
+            CREATE OR REPLACE TRIGGER SURVEY_ORG_MAPPING_TRIGGER
+            BEFORE INSERT ON SURVEY_ORG_MAPPING
+            FOR EACH ROW
+            DECLARE
+            BEGIN SELECT SURVEY_ORG_MAPPING_SEQUENCE.NEXTVAL INTO :new.ID
+            FROM dual;
+            END;
+            /
+        </sql>
+    </changeSet>
+    <changeSet id="setting_meta_trigger" author="dinchand" dbms="oracle">
+        <sql endDelimiter="/">
+            CREATE OR REPLACE TRIGGER SETTINGS_METADATA_TRIGGER
+                BEFORE INSERT ON SETTINGS_METADATA
+                FOR EACH ROW
+            DECLARE
+            BEGIN SELECT SETTINGS_METADATA_SEQUENCE.NEXTVAL INTO :new.ID
+                  FROM dual;
+            END;
+            /
+        </sql>
+    </changeSet>
+    <changeSet id="setting_meta_opt_trigger" author="dinchand" dbms="oracle">
+        <sql endDelimiter="/">
+            CREATE OR REPLACE TRIGGER SETTINGS_METADATA_OPTIONS_TRIGGER
+                BEFORE INSERT ON SETTINGS_METADATA_OPTIONS
+                FOR EACH ROW
+            DECLARE
+            BEGIN SELECT SETTINGS_METADATA_OPTIONS_SEQUENCE.NEXTVAL INTO :new.ID
+                  FROM dual;
+            END;
+            /
+        </sql>
+    </changeSet>
+</databaseChangeLog>
